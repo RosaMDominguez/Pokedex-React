@@ -2,9 +2,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Home from './pages/PokemonHome/PokemoHome';
+import Home from './pages/PokemonHomePage/PokemoHome';
 import PokemonList from './pages/PokemonList/PokemonList';
-import PokemonDetails from './pages/PokemonDetails/PokemonDetails';
+import PokemonDetails from './pages/PokemonDetailsPage/PokemonDetailsPage';
 
 
 
