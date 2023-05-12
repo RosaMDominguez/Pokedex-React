@@ -1,5 +1,5 @@
 
-import pokemonsTeam from '../../assets/images/pokemonsTeam.png'
+import pokemonsTeam from '../../assets/images/pokemonTeam.png'
 import './PokemonHome.styles.scss';
 
 const appName: string = 'Welcome Pokedex';
