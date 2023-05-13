@@ -4,7 +4,6 @@ import './PokemonHomePage.scss';
 import Button from '../../components/atoms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
-const APP_NAME: string = 'Welcome Pokedex';
 const LINK_TITLE : string = 'Enter';
 const ALT_IMG: string = 'imgPokemons'
 const URL_LINK: string = '/pokemonListPage';

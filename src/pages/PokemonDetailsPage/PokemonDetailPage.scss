@@ -1,0 +1,48 @@
+.containerDetail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+.pokedex {
+    width: 40rem;
+    height: 40rem;
+    background-image: url('../../assets/images/pokedex.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.pokemonImg{
+margin-top: 6.5rem;
+margin-left: 17rem;
+    img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.pokemonDetail{
+margin-top: 8.5rem;
+margin-left: 12rem;
+width: 15rem;
+height: 10rem;
+font-size: 13px;
+
+.statsContainer{
+    height: 1.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+
+
+progress{
+    width: 6rem;
+    color: red;
+}
+    
+}
+}
+
+
+}

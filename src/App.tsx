@@ -5,6 +5,7 @@ import './App.scss';
 import Home from './pages/PokemonHomePage/PokemonHomePage';
 import PokemonListPage from './pages/PokemonListPage/PokemonListPage';
 import PokemonDetails from './pages/PokemonDetailsPage/PokemonDetailsPage';
+import PokemonDetailsPage from './pages/PokemonDetailsPage';
 
 
 
@@ -14,7 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Home />}></Route>
       <Route path="/pokemonListPage" element={ <PokemonListPage />}></Route>
-      <Route path="/pokemonDetails/:id" element={ <PokemonDetails />}></Route>
+      <Route path="/pokemonDetailsPage/:id" element={ <PokemonDetailsPage />}></Route>
     </Routes>
     </BrowserRouter>
   );
