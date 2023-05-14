@@ -8,8 +8,8 @@ const usePokemonDetail = (id: string) => {
       .then((response) => response.json())
       .then((response) => setResult(response))
       .catch((error) => setResult(error));
-  }, []);
-console.log('***estoy llegando al servicioo y devuelvo esto', result)
+  },[]);
+
   return result;
 };
 

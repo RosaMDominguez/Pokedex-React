@@ -4,15 +4,15 @@ import "./List.scss";
 
 const List = (props: PokemonsResponse) => {
   const { pokemonsDetail } = props;
-  // const pokemonListData: PokemonsDetail[] = usePokemonsList();
-  console.log("***listado de pokemons", pokemonsDetail);
+
   const numberExtractor = (url: string) => {
     return url.replace(/\d/, "").replace(/\D/g, "");
   };
 
   return (
     <div className="cardsContainer">
-      {pokemonsDetail.map((pokemon, idx: number) => (
+      {pokemonsDetail.map((pokemon, index) => (
+        
         <Card
           pokemonId={numberExtractor(pokemon.url)}
           name={pokemon.name}

@@ -5,29 +5,32 @@ const TITLE_BUTTON_NEXT: string = "Siguiente";
 const TITLE_BUTTON_PREVIEW: string = "Anterior";
 
 const Pagination = (props: PaginationProps) => {
-  let { currentPage } = props;
+  const { numPage, updateCurrentPage } = props;
 
-  const goToNextPage = (): void => {
-    currentPage = currentPage + 1;
-    console.log("***esto vale page", currentPage);
+  const goToNextPage = (page: number): void => {
+    page = numPage + 1;
+    updateCurrentPage(page);
   };
-  const goToPrePage = (): void => {
-    currentPage = currentPage - 1;
-    console.log("***esto vale page", currentPage);
+  const goToPrePage = (page:number): void => {
+    page = numPage - 1;
+    updateCurrentPage(page);
   };
+
 
   return (
     <div>
+      
       <Button
         title={TITLE_BUTTON_PREVIEW}
         onClickButton={() => {
-          goToPrePage();
+          goToPrePage(numPage);
         }}
       />
+      {props.children}
       <Button
         title={TITLE_BUTTON_NEXT}
         onClickButton={() => {
-          goToNextPage();
+          goToNextPage(numPage);
         }}
       />
     </div>

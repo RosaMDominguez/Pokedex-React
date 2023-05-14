@@ -1,3 +1,5 @@
 export interface PaginationProps {
-    currentPage: number;
+    numPage: number;
+    updateCurrentPage:(page:number) => void;
+    children: React.ReactNode;
 }

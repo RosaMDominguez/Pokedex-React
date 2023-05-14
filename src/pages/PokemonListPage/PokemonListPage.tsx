@@ -14,25 +14,24 @@ export const PokemonsListPage =()=>{
   const pokemonListResult: PokemonsDetail[] = usePokemonsList();
 
  const getPaginatedData = (): PokemonsDetail[] => {
-  console.log('***esta es la lista', pokemonListResult)
     const startIndex = currentPage * cardsLimit - cardsLimit;
     const endIndex = startIndex + cardsLimit;
     return pokemonListResult.slice(startIndex, endIndex);
   };
+  
 
-  const pokemonsResponse = getPaginatedData();
+  let pokemonsResponse = getPaginatedData();
 
     return (
       <>
       <Header></Header>
         <div className="containerPokemonsList">
           <List pokemonsDetail={pokemonsResponse}></List>
-         {/* <Pagination page={currentPage} updateCurrentPage={() => {
-          updateCurrentPage;
+         <Pagination numPage={currentPage} updateCurrentPage={(currentPage:number) => {
+          updateCurrentPage(currentPage);
         }}
         >
-         </Pagination> */}
-          <Pagination currentPage={currentPage}></Pagination>
+         </Pagination>
         </div>
         </>
       );
