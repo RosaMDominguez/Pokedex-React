@@ -1,18 +1,26 @@
-import { PokemonsDetail, PokemonsResponse } from "../../../interfaces/interfaces";
+import { PokemonsResponse } from "../../../interfaces/interfaces";
 import Card from "../../molecules/Card/Card";
-import './List.scss';
+import "./List.scss";
 
 const List = (props: PokemonsResponse) => {
   const { pokemonsDetail } = props;
   // const pokemonListData: PokemonsDetail[] = usePokemonsList();
-console.log('***listado de pokemons', pokemonsDetail)
-return(
-  <div className="cardsContainer">
-            {pokemonsDetail.map((d, idx: number) => (
-              <Card name={d.name} url={d.url} key={idx} />
-            ))}
-  </div>
-)
-}
+  console.log("***listado de pokemons", pokemonsDetail);
+  const numberExtractor = (url: string) => {
+    return url.replace(/\d/, "").replace(/\D/g, "");
+  };
+
+  return (
+    <div className="cardsContainer">
+      {pokemonsDetail.map((pokemon, idx: number) => (
+        <Card
+          pokemonId={numberExtractor(pokemon.url)}
+          name={pokemon.name}
+          url={pokemon.url}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default List;

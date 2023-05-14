@@ -1,9 +1,10 @@
 export interface PokemonsResponse{
-    pokemonsDetail: PokemonsDetail[]
+    pokemonsDetail: PokemonsDetail[];
+    key?: number;
 }
 
 export interface PokemonsDetail {
-key: number;
+pokemonId: string;
 name: string;
 url: string;
 }

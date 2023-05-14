@@ -45,5 +45,7 @@
   },
   "devDependencies": {
     "@storybook/cli": "^6.5.0",
-    "@storybook/react": "^6.5.0"  }
+    "@storybook/react": "^6.5.0",
+    "@types/react-router-dom": "^5.3.3"
+  }
 }

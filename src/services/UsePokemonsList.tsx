@@ -9,7 +9,6 @@ const usePokemonsList = () => {
       .then((response) => setResult(response.results))
       .catch((error) => setResult(error));
   }, []);
-console.log('***estoy llegando al servicioo y devuelvo esto', result)
   return result;
 };
 

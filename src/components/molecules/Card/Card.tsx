@@ -3,22 +3,21 @@ import { PokemonsDetail } from "../../../interfaces/interfaces";
 import usePokemonDetail from "../../../services/UsePokemonDetails";
 import "./Card.scss";
 
-
 const Card = (props: PokemonsDetail) => {
-  const { key, name, url } = props;
+  const { pokemonId, name, url } = props;
 
-  const numberExtractor = (url: string) => {
-    return url.replace(/\d/, "").replace(/\D/g, "");
-  };
-
-  const URL_LINK: string = `/pokemonDetailsPage/${numberExtractor(url)}`;
+  const URL_LINK: string = `/pokemonDetailsPage/${pokemonId}`;
+  const pokemon: any = usePokemonDetail(pokemonId);
 
   const navigate = useNavigate();
 
-  const pokemon: any = usePokemonDetail(numberExtractor(url).toString());
-
   return (
-    <div className="pokeCard" onClick={()=>{ navigate(URL_LINK)}}>
+    <div
+      className="pokeCard"
+      onClick={() => {
+        navigate(URL_LINK);
+      }}
+    >
       <div className="cardImg">
         <img
           src={

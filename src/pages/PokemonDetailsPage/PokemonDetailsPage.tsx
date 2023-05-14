@@ -4,14 +4,12 @@ import './PokemonDetailPage.scss';
 import usePokemonDetail from "../../services/UsePokemonDetails";
 
 export const PokemonsDetailsPage = (): React.ReactElement => {
-    const id  = useParams();
+    const {id } = useParams();
 
-    const pokemonId = id.id;
-    console.log('**este es el pokemon', pokemonId)
-    // if( pokemonId ) {
+    const pokemonId = id;
+    
         const pokemon: any = usePokemonDetail(pokemonId || '1');
-        // console.log('**este es el pokemon', pokemonId)
-    // }
+          const pokemonStats= pokemon.stats;
     
     return (
 <>
@@ -28,11 +26,7 @@ export const PokemonsDetailsPage = (): React.ReactElement => {
         />
         </div>
 <div className="pokemonDetail">
-{/* <p>{pokemon.}</p>
-<p>{pokemon.}</p>
-<p>{pokemon.}</p>
-<p>{pokemon.}</p> */}
-{pokemon.stats.map((s: any) => (
+{pokemonStats?.map((s: any) => (
                 <div className="statsContainer">
                     <div>
                   <p>{s.stat.name.toLowerCase()}</p>
@@ -48,8 +42,5 @@ export const PokemonsDetailsPage = (): React.ReactElement => {
        
         </>
     )
-        
-        
-    
 }
 export default PokemonsDetailsPage;
