@@ -5,8 +5,10 @@ import usePokemonsList from "../../services/UsePokemonsList";
 import List from "../../components/organisms/List/List";
 import "./PokemonListPage.scss";
 import Header from "../../components/organisms/Header/Header";
+import Error from "../../components/atoms/Error/Error";
 
 const CARDS_LIMIT = 12;
+const TEXT_ERROR = 'No se ha podio cargar la lista de Pokemons';
 
 export const PokemonsListPage = () => {
   const [currentPage, updateCurrentPage] = useState(1);
@@ -23,7 +25,9 @@ export const PokemonsListPage = () => {
 
   return (
     <>
+    
       <Header></Header>
+      {pokemonListResult && (
       <div className="containerPokemonsList">
         <List pokemonsDetail={pokemonsResponse}></List>
         <Pagination
@@ -33,6 +37,10 @@ export const PokemonsListPage = () => {
           }}
         ></Pagination>
       </div>
+      )}
+      {!pokemonListResult && (
+        <Error text={TEXT_ERROR}></Error>
+      )}
     </>
   );
 };
