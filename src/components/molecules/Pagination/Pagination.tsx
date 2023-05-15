@@ -1,38 +1,54 @@
 import Button from "../../atoms/Button/Button";
 import { PaginationProps } from "./Pagination.interface";
 
-const TITLE_BUTTON_NEXT: string = "Siguiente";
-const TITLE_BUTTON_PREVIEW: string = "Anterior";
+const TITLE_BUTTON_NEXT: string = "Next";
+const TITLE_BUTTON_PREVIEW: string = "Previous";
 
 const Pagination = (props: PaginationProps) => {
   const { numPage, updateCurrentPage } = props;
+
+  let disabledButtonPrevious: boolean = false;
+  let disabledButtonNext: boolean = false;
+
+
+  if(numPage === 1 ){
+    disabledButtonPrevious = true;
+  }
+  if(numPage === 13){
+    disabledButtonNext = true;
+  }
 
   const goToNextPage = (page: number): void => {
     page = numPage + 1;
     updateCurrentPage(page);
   };
-  const goToPrePage = (page:number): void => {
+  const goToPrePage = (page: number): void => {
     page = numPage - 1;
     updateCurrentPage(page);
   };
 
-
   return (
     <div>
-      
-      <Button
-        title={TITLE_BUTTON_PREVIEW}
-        onClickButton={() => {
-          goToPrePage(numPage);
-        }}
-      />
+      {!disabledButtonPrevious && (
+           <Button
+           isDisabled={disabledButtonPrevious}
+           title={TITLE_BUTTON_PREVIEW}
+           onClickButton={() => {
+             goToPrePage(numPage);
+           }}
+         />
+        )}
       {props.children}
-      <Button
-        title={TITLE_BUTTON_NEXT}
-        onClickButton={() => {
-          goToNextPage(numPage);
-        }}
-      />
+      {!disabledButtonNext && (
+          <Button
+          isDisabled={disabledButtonNext}
+          title={TITLE_BUTTON_NEXT}
+          onClickButton={() => {
+            goToNextPage(numPage);
+          }}
+        />
+        )}
+      
     </div>
   );
 };
