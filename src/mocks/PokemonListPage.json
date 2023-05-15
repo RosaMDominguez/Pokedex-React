@@ -1,0 +1,17 @@
+[
+    {
+        "pokemonId":"1",
+        "name": "bulbasaur",
+        "url": "https://pokeapi.co/api/v2/pokemon/1/"
+    },
+    {
+        "pokemonId":"2",
+        "name": "ivysaur",
+        "url": "https://pokeapi.co/api/v2/pokemon/2/"
+    },
+    {
+        "pokemonId":"3",
+        "name": "venusaur",
+        "url": "https://pokeapi.co/api/v2/pokemon/3/"
+    }
+]

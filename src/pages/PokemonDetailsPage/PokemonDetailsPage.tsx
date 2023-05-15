@@ -3,9 +3,11 @@ import Header from "../../components/organisms/Header/Header";
 import "./PokemonDetailPage.scss";
 import usePokemonDetail from "../../services/UsePokemonDetails";
 import Button from "../../components/atoms/Button";
+import Error from "../../components/atoms/Error";
 
 const TITLE_BUTTON: string = "BACK";
 const URL_LINK: string = "/pokemonListPage";
+const TEXT_ERROR: string = "No se ha podido cargar el perfil"
 
 export const PokemonsDetailsPage = (): React.ReactElement => {
   const { id } = useParams();
@@ -18,6 +20,7 @@ export const PokemonsDetailsPage = (): React.ReactElement => {
   return (
     <>
       <Header></Header>
+      {pokemon && (
       <div className="containerDetail">
         <Button
           title={TITLE_BUTTON}
@@ -49,6 +52,10 @@ export const PokemonsDetailsPage = (): React.ReactElement => {
           </div>
         </div>
       </div>
+      )}
+      {!pokemon && (
+        <Error text={TEXT_ERROR}></Error>
+      )}
     </>
   );
 };
