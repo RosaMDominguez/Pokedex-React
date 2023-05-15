@@ -4,7 +4,7 @@ import './PokemonHomePage.scss';
 import Button from '../../components/atoms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
-const LINK_TITLE : string = 'Enter';
+const LINK_TITLE : string = 'Go';
 const ALT_IMG: string = 'imgPokemons'
 const URL_LINK: string = '/pokemonListPage';
 const URL_IMG: string = 'https://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-png-2000.png';

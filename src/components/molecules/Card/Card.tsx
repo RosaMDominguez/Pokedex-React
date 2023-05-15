@@ -9,7 +9,7 @@ const Card = (props: PokemonsDetail) => {
   const numberExtractor = (url: string) => {
     return url.replace(/\d/, "").replace(/\D/g, "");
   };
-  const pokemonImg: any = usePokemonImg(numberExtractor(url));
+  const pokemonImg: string = usePokemonImg(numberExtractor(url));
   const URL_LINK: string = `/pokemonDetailsPage/${pokemonId}`;
   const navigate = useNavigate();
 

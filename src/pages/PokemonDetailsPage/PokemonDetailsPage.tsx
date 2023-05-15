@@ -7,7 +7,7 @@ import Button from "../../components/atoms/Button";
 export const PokemonsDetailsPage = (): React.ReactElement => {
   const { id } = useParams();
   const pokemonId = id;
-  const pokemon: any = usePokemonDetail(pokemonId || "1");
+  const pokemon: any = usePokemonDetail(pokemonId || ""); // TODO: revisar tipado
   const pokemonStats = pokemon.stats;
   const TITLE_BUTTON: string = 'BACK'
   const URL_LINK: string = '/pokemonListPage';
