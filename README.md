@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Info App
+
+Pokedex desde 0 usando la Pokeapi con react + ts
+
 ## Available Scripts
 
 In the project directory, you can run::
