@@ -3,6 +3,8 @@ import { PaginationProps } from "./Pagination.interface";
 
 const TITLE_BUTTON_NEXT: string = "Next";
 const TITLE_BUTTON_PREVIEW: string = "Previous";
+const INITIAL_PAGE: number = 1;
+const FINAL_PAGE: number = 13;
 
 const Pagination = (props: PaginationProps) => {
   const { numPage, updateCurrentPage } = props;
@@ -10,11 +12,10 @@ const Pagination = (props: PaginationProps) => {
   let disabledButtonPrevious: boolean = false;
   let disabledButtonNext: boolean = false;
 
-
-  if(numPage === 1 ){
+  if (numPage === INITIAL_PAGE) {
     disabledButtonPrevious = true;
   }
-  if(numPage === 13){
+  if (numPage === FINAL_PAGE) {
     disabledButtonNext = true;
   }
 
@@ -30,25 +31,24 @@ const Pagination = (props: PaginationProps) => {
   return (
     <div>
       {!disabledButtonPrevious && (
-           <Button
-           isDisabled={disabledButtonPrevious}
-           title={TITLE_BUTTON_PREVIEW}
-           onClickButton={() => {
-             goToPrePage(numPage);
-           }}
-         />
-        )}
+        <Button
+          isDisabled={disabledButtonPrevious}
+          title={TITLE_BUTTON_PREVIEW}
+          onClickButton={() => {
+            goToPrePage(numPage);
+          }}
+        />
+      )}
       {props.children}
       {!disabledButtonNext && (
-          <Button
+        <Button
           isDisabled={disabledButtonNext}
           title={TITLE_BUTTON_NEXT}
           onClickButton={() => {
             goToNextPage(numPage);
           }}
         />
-        )}
-      
+      )}
     </div>
   );
 };

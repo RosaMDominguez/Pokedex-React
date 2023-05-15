@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { ButtonProps } from './Button.interface';
 
 export default {
-  title: 'Components/molecules/Button',
+  title: 'Components/atoms/Button',
   component: Button
 } as Meta;
 

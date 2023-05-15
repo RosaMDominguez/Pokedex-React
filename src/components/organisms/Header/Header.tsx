@@ -1,15 +1,14 @@
-import './Header.scss';
+import "./Header.scss";
+
+const HEADER_TITLE: string = "Pokédex";
 
 const Header = () => {
-  const HeaderTitle: string = 'Pokédex';
-  const UrlIcon: string = '../../../assets/images/pngegg (1).png';
-  
-return(
-<div className='containerHeaders'>
-{/* <img src='../../../assets/images/pngegg (1).png' alt={HeaderTitle} /> */}
-<h1>{HeaderTitle}</h1>
-</div>
-)
-}
+
+  return (
+    <div className="containerHeaders">
+      <h1>{HEADER_TITLE}</h1>
+    </div>
+  );
+};
 
 export default Header;

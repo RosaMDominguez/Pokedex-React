@@ -11,8 +11,7 @@ const List = (props: PokemonsResponse) => {
 
   return (
     <div className="cardsContainer">
-      {pokemonsDetail.map((pokemon, index) => (
-        
+      {pokemonsDetail.map((pokemon) => (
         <Card
           pokemonId={numberExtractor(pokemon.url)}
           name={pokemon.name}
