@@ -1,11 +1,12 @@
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import Button from "./Button";
 
-describe("Button", () => {
+describe("Button clicked", () => {
   it("Should", () => {
-    const view = render(<Button title={'TITLE_BUTTON_PREVIEW'}
-        onClickButton={() => {}} />);
+    const functionButton = jest.fn();
+    const { getByText } = render(<Button title='Click' onClickButton={functionButton}></Button>);
 
-        expect(view).toBeDefined();
+    fireEvent.click(screen.getByText(''));
+        expect(functionButton).toBeCalled();
   });
 });
