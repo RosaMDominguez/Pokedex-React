@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Pokedex desde 0 usando la Pokeapi con react + ts
+
+The project consists in showing a list of Pokémons and being able to see their details;When accessing the application through the home, a list of the Pokémon that we bring from the API will be displayed, showing the image of the Pokémon and its name; Clicking on a card will display the details of the selected Pokémon.
+
+<img width="1176" alt="Captura de pantalla 2023-05-15 a las 8 41 30" src="https://github.com/RosaMDominguez/Pokedex-React/assets/132953393/4ec07218-bd0c-4a5b-a876-eca559c58687">
+
+<img width="1177" alt="Captura de pantalla 2023-05-15 a las 8 41 57" src="https://github.com/RosaMDominguez/Pokedex-React/assets/132953393/3765e1be-087a-4dc3-9292-244569421535">
+
+<img width="1180" alt="Captura de pantalla 2023-05-15 a las 8 42 30" src="https://github.com/RosaMDominguez/Pokedex-React/assets/132953393/c20a2cf5-54cd-472a-8054-8540ca1c5681">
+
+
+
 ## Available Scripts
 
 In the project directory, you can run::
