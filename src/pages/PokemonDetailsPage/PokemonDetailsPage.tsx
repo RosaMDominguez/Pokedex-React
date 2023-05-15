@@ -4,13 +4,14 @@ import "./PokemonDetailPage.scss";
 import usePokemonDetail from "../../services/UsePokemonDetails";
 import Button from "../../components/atoms/Button";
 
+const TITLE_BUTTON: string = "BACK";
+const URL_LINK: string = "/pokemonListPage";
+
 export const PokemonsDetailsPage = (): React.ReactElement => {
   const { id } = useParams();
   const pokemonId = id;
   const pokemon: any = usePokemonDetail(pokemonId || ""); // TODO: revisar tipado
   const pokemonStats = pokemon.stats;
-  const TITLE_BUTTON: string = 'BACK'
-  const URL_LINK: string = '/pokemonListPage';
 
   const navigate = useNavigate();
 
@@ -18,10 +19,12 @@ export const PokemonsDetailsPage = (): React.ReactElement => {
     <>
       <Header></Header>
       <div className="containerDetail">
-      <Button
-            title={TITLE_BUTTON}
-            onClickButton={()=>{ navigate(URL_LINK)}}
-          ></Button>
+        <Button
+          title={TITLE_BUTTON}
+          onClickButton={() => {
+            navigate(URL_LINK);
+          }}
+        ></Button>
         <div className="pokedex">
           <div className="pokemonImg">
             <img

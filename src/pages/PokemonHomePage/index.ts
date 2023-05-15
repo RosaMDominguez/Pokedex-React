@@ -1,2 +1,2 @@
-import PokemonsHomePage from './PokemonHomePage';
+import PokemonsHomePage from "./PokemonHomePage";
 export default PokemonsHomePage;

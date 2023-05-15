@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { ButtonProps } from "./Button.interface";
-import './Button.scss';
+import "./Button.scss";
 
 const Button = (props: ButtonProps): ReactElement => {
   const { icon, iconPosition, onClickButton, title, isDisabled } = props;
